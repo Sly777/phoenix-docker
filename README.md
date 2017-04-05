@@ -26,11 +26,17 @@ The 'latest' tag on Docker Hub should always be reasonably in sync with the tip 
 docker run -it -v "$PWD":/app ilkerguller/phoenix:latest
 ```
 
-or (by docker-compose)
+### To prepare Docker-compose:
 
-```
-docker-compose up -d
-```
+  - docker-compose up -d
+  - docker-compose run api mix deps.get
+  - docker-compose run api mix ecto.create
+  - docker-compose run api mix ecto.migrate
+  - docker-compose run api npm install
+
+### Use after prepare
+
+  - docker-compose up -d
 
 ### Authors
 
