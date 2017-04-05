@@ -2,9 +2,16 @@ version: '2'
 services:
   db:
     image: postgres:9.6.2
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
   api:
     image: ilkerguller/phoenix:latest
     command: mix phoenix.server
+    environment:
+      - DOCKER=true
     volumes:
       - .:/app
     ports:
