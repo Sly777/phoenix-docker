@@ -45,6 +45,8 @@ ONBUILD RUN mix deps.get
 
 ONBUILD COPY package.json /app/
 ONBUILD RUN npm install
+
+ONBUILD COPY config /app/config/
 ONBUILD RUN mix deps.compile
 # ONBUILD RUN mix deps.compile --only prod
 
