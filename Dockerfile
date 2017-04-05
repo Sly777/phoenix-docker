@@ -36,19 +36,19 @@ RUN mix local.hex --force \
     && mix local.rebar --force \
     && mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez --force
 
-ONBUILD WORKDIR /app
-# ONBUILD ENV MIX_ENV prod
+WORKDIR /app
+# ENV MIX_ENV prod
 
-ONBUILD COPY mix.* /app/
-ONBUILD RUN mix deps.get
-# ONBUILD RUN mix deps.get --only prod
+COPY mix.* /app/
+RUN mix deps.get
+# RUN mix deps.get --only prod
 
-ONBUILD COPY package.json /app/
-ONBUILD RUN npm install
+COPY package.json /app/
+RUN npm install
 
-ONBUILD COPY config /app/config/
-ONBUILD RUN mix deps.compile
-# ONBUILD RUN mix deps.compile --only prod
+COPY config /app/config/
+RUN mix deps.compile
+# RUN mix deps.compile --only prod
 
-ONBUILD COPY . /app/
-ONBUILD RUN mix compile
+COPY . /app/
+RUN mix compile
