@@ -2,6 +2,8 @@
 ## A Docker container for the Phoenix framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker Stars](https://img.shields.io/docker/stars/ilkerguller/phoenix.svg)](https://hub.docker.com/r/ilkerguller/phoenix/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ilkerguller/phoenix.svg)](https://hub.docker.com/r/ilkerguller/phoenix/)
 
 This image is based on the [official Elixir image](https://hub.docker.com/_/elixir/) and includes the features of that image.
 
