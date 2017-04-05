@@ -7,6 +7,8 @@
 
 This image is based on the [official Elixir image](https://hub.docker.com/_/elixir/) and includes the features of that image.
 
+[Click here to open docker hub link](https://hub.docker.com/r/ilkerguller/phoenix/)
+
 ### Image Contents (updated: 05/04/2017)
 
 - Elixir 1.4.2

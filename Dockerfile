@@ -9,19 +9,18 @@ ENV PHOENIX_VERSION 1.2.3
 ENV NODE_VERSION 7
 ENV PATH $PATH:node_modules/.bin:/opt/elixir-$ELIXIR_VERSION/bin
 
-# Create Certificate
-RUN mkdir -p /etc/ssl/certs \
-    && apk -U add ca-certificates \
-    && update-ca-certificates
-
-# Install System Dependencies
+# Install System Dependencies + Nodejs
 RUN apt-get update -q && apt-get upgrade -y \
-    && apt-get install -y apt-transport-https curl wget git make sudo locales \
+    && apt-get install -y apt-transport-https curl wget git make sudo locales ca-certificates \
     && apt-get update -q \
     && curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | sudo -E bash - \
     && sudo apt-get install -y nodejs \
     && apt-get clean -y \
     && rm -rf /var/cache/apt/*
+
+# Create Certificate
+RUN mkdir -p /etc/ssl/certs \
+    && sudo update-ca-certificates
 
 # Elixir requires UTF-8
 RUN locale-gen en_US.UTF-8
