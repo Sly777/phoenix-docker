@@ -37,9 +37,7 @@ RUN mix local.hex --force \
     && mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez --force
 
 WORKDIR /app
+ADD . /app
 
-CMD [
-  "sh",
-  "-c",
-  "iex --version && mix deps.get && npm install && mix phoenix.server"
-]
+ONBUILD RUN mix deps.get
+ONBUILD RUN npm install

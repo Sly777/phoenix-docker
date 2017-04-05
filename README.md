@@ -23,7 +23,13 @@ The 'latest' tag on Docker Hub should always be reasonably in sync with the tip 
 ### How to use this image
 
 ```
-docker run -it -v "$PWD":/app ilkerguller/phoenix
+docker run -it -v "$PWD":/app ilkerguller/phoenix:latest
+```
+
+or (by docker-compose)
+
+```
+docker-compose up -d
 ```
 
 ### Authors
