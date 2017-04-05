@@ -12,7 +12,7 @@ This image is based on the [official Elixir image](https://hub.docker.com/_/elix
 ### Image Contents (updated: 05/04/2017)
 
 - Elixir 1.4.2
-- Phoenix 1.2.3
+- Phoenix 1.2.1
 - Node JS 7.x
 - Yarn (NPM)
 
